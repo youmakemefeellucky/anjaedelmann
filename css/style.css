@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
+
+/* font-family: 'Open Sans', sans-serif; */
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.navbar {
+  display: flex;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  align-items: center;
+  box-sizing: border-box;
+  background: #fff;
+  font-size: 2rem;
+  font-weight: 300;
+  padding-bottom: 8px;
+  z-index: 5;
+}
+
+.navbar > a {
+  padding: 24px 40px;
+}
+
+.navbar-home {
+  flex-grow: 1;
+}
+
+.navbar-menu {
+  padding: 0;
+  margin-left: 216px;
+}
+
+.main-page {
+  float: right;
+}
+
+.container {
+  padding: 0 40px;
+  height: 100vh;
+  box-sizing: border-box;
+  padding-bottom: 88px;
+  max-width: 75vw;
+  flex-grow: 1;
+  z-index: 1;
+}
+
+.main-image {
+  height: 100%;
+  float: right;
+}
+
+.left-menu {
+  position: fixed;
+  top: 0;
+  height: 70vh;
+  padding-top: 40px;
+  overflow: scroll;
+}
+
+.left-description {
+  position: fixed;
+  bottom: 88px;
+  height: 20vh;
+}
+
+.flex-row {
+  display: flex;
+  width: 100vw;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  max-width: 25vw;
+}
+
+.menu-title {
+  font-size: 1.5rem;
+  font-weight: 400;
+  padding: 1.8rem 0;
+}
+
+.menu-item {
+  font-weight: 300;
+  font-size: 1.2rem;
+  line-height: 3rem;
+}
+
+.work-title {
+  font-size: 1.3rem;
+  padding: 1.2rem 0;
+}
+
+.work-description {
+  line-height: 1.5rem;
+}
+
+.active {
+  font-weight: 600;
+}
+
+.gradient-box {
+  position: sticky;
+  pointer-events: none;
+  bottom: 0;
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,0.8),rgba(255,255,255,1) );
+}
+
+.fade {
+  opacity: 0.5;
+}
+
+.icon {
+  padding: 16px 0;
+}
+
+.small-image {
+  display: block;
+  width: 600px;
+  padding-bottom: 56px;
+}
+
+.text {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 2rem;
+}
+
+.about-container {
+  padding: 56px 120px 200px 40px;
+  box-sizing: border-box;
+  max-width: 75vw;
+}
+
+.bold {
+  font-weight: 600;
+  padding: 2rem 0 1rem 0;
+}
+
+label {
+  padding: 2rem 0 1rem;
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+input {
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.03);
+  border: none;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input:focus {
+  border-color: blue;
+}
+
+textarea {
+  font-family: 'Open Sans', sans-serif;
+  resize: none;
+  background: rgba(0, 0, 0, 0.03);
+  padding: 1rem;
+  border: none;
+  display: inline-block;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.button {
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 2rem 0;
+  width: 100%;
+}
+
+::placeholder {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.8rem;
+}
