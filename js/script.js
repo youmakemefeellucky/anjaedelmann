@@ -1,14 +1,19 @@
-var slideIndex = 0;
-carousel();
+$("#slideshow > div:gt(0)").hide();
 
-function carousel() {
-  var i;
-  var images = $( ".main-image" );
-  for (i = 0; i < images.length; i++) {
-    images[i].style.display = "none";
-  }
-  slideIndex++;
-  if (slideIndex > images.length) {slideIndex = 1}
-  images[slideIndex-1].style.display = "block";
-  setTimeout(carousel, 3000);
-};
+setInterval(function() {
+  $('#slideshow > img:first')
+    .fadeOut(1000)
+    .next()
+    .fadeIn(1000)
+    .end()
+    .appendTo('#slideshow');
+}, 3000);
+
+
+$(document).ready(function(){
+	$('.navbar-burger').click(function(){
+		$(this).toggleClass('open');
+    $('.toggle-menu').slideToggle();
+    $('.navbar-home').toggle();
+	});
+});
