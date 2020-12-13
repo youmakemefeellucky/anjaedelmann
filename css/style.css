@@ -12,88 +12,80 @@ a {
   color: inherit;
 }
 
+::placeholder {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.8rem;
+}
+
 .navbar {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   position: fixed;
   left: 0;
-  bottom: 0;
+  top: 0;
   width: 100vw;
-  align-items: center;
   box-sizing: border-box;
   background: #fff;
-  font-size: 2rem;
   font-weight: 300;
-  padding-bottom: 8px;
-  z-index: 5;
+  z-index: 10;
 }
 
-.navbar > a {
-  padding: 24px 40px;
+.navbar-home, .navbar-burger {
+  font-size: 2rem;
+  padding: 1rem;
+  cursor: pointer;
 }
 
-.navbar-home {
-  flex-grow: 1;
+.navbar-burger.open span:nth-child(1) {
+  -webkit-transform: rotate(45deg) translate(-1px, -3px);
+  -moz-transform: rotate(45deg) translate(-1px, -3px);
+  -o-transform: rotate(45deg) translate(-1px, -3px);
+  transform: rotate(45deg) translate(-1px, -3px);
+}
+
+.navbar-burger.open span:nth-child(2) {
+  width: 0%;
+  opacity: 0;
+}
+
+.navbar-burger.open span:nth-child(3) {
+  -webkit-transform: rotate(-45deg) translate(-1px, 3px);
+  -moz-transform: rotate(-45deg) translate(-1px, 3px);
+  -o-transform: rotate(-45deg) translate(-1px, 3px);
+  transform: rotate(-45deg) translate(-1px, 3px);
 }
 
 .navbar-menu {
-  padding: 0;
-  margin-left: 216px;
+  display: none;
 }
 
-.main-page {
-  float: right;
-}
-
-.container {
-  padding: 0 40px;
-  height: 100vh;
-  box-sizing: border-box;
-  padding-bottom: 88px;
-  max-width: 75vw;
-  flex-grow: 1;
-  z-index: 1;
-}
-
-.main-image {
-  height: 100%;
-  float: right;
-}
-
-.left-menu {
-  position: fixed;
-  top: 0;
-  height: 70vh;
-  padding-top: 40px;
-  overflow: scroll;
-}
-
-.left-description {
-  position: fixed;
-  bottom: 88px;
-  height: 20vh;
-}
-
-.flex-row {
-  display: flex;
-  width: 100vw;
+.line {
+  display: block;
+  width: 2rem;
+  height: 2px;
+  background: #000;
+  margin: 6px;
+  z-index: 10;
+  transition: 0.3s ease-in-out;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center;
 }
 
 .flex-column {
   display: flex;
   flex-direction: column;
-  max-width: 25vw;
+  width: 100vw;
 }
 
-.menu-title {
-  font-size: 1.5rem;
-  font-weight: 400;
-  padding: 1.8rem 0;
+.left-menu {
+  display: none;
 }
 
-.menu-item {
-  font-weight: 300;
-  font-size: 1.2rem;
-  line-height: 3rem;
+.left-description {
+  position: relative;
 }
 
 .work-title {
@@ -101,35 +93,86 @@ a {
   padding: 1.2rem 0;
 }
 
-.work-description {
-  line-height: 1.5rem;
+.container {
+  padding: 16px;
+  box-sizing: border-box;
+  width: 100vw;
 }
 
-.active {
-  font-weight: 600;
+.about-container {
+  padding: 80px 16px 120px;
+  box-sizing: border-box;
+  width: 100vw;
 }
 
-.gradient-box {
-  position: sticky;
-  pointer-events: none;
-  bottom: 0;
+.main-page {
+  padding-top: 80px;
+}
+
+#slideshow {
+  position: relative;
   width: 100%;
-  height: 200px;
-  background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,0.8),rgba(255,255,255,1) );
+  box-sizing: border-box;
+  margin: 0;
+  padding: 72px 16px;
 }
 
-.fade {
-  opacity: 0.5;
+.main-image {
+  position: absolute;
+  max-height: 90vh;
+  max-width: 90vw;
+  top: 80px;
+  right: 16px;
 }
 
-.icon {
-  padding: 16px 0;
+.work-image {
+  max-height: 80vh;
+  width: auto;
+  max-width: 100%;
 }
 
 .small-image {
   display: block;
-  width: 600px;
+  width: 100%;
+  max-width: 600px;
   padding-bottom: 56px;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-row {
+  padding-top: 72px;
+}
+
+.toggle-menu {
+  display: none;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding-top: 30vh;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  background: #fff;
+  z-index: 9;
+}
+
+.toogle-menu-item {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 300;
+  margin: 2rem;
+  padding: 2rem;
+}
+
+.bold {
+  font-weight: 600;
+  padding: 2rem 0 1rem 0;
 }
 
 .text {
@@ -138,15 +181,18 @@ a {
   line-height: 2rem;
 }
 
-.about-container {
-  padding: 56px 120px 200px 40px;
-  box-sizing: border-box;
-  max-width: 75vw;
+.menu-item {
+  font-weight: 300;
+  font-size: 1.2rem;
+  line-height: 3rem;
 }
 
-.bold {
+.active {
   font-weight: 600;
-  padding: 2rem 0 1rem 0;
+}
+
+.icon {
+  padding: 12px 0 2px;
 }
 
 label {
@@ -189,7 +235,132 @@ textarea {
   width: 100%;
 }
 
-::placeholder {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 0.8rem;
+@media only screen and (min-width: 1512px) {
+
+  /* desktop */
+  .navbar {
+    top: auto;
+    bottom: 0;
+    height: 72px;
+    font-size: 2rem;
+    padding-bottom: 8px;
+  }
+
+  /* desktop */
+  .navbar-home, .navbar-menu {
+    display: block;
+    padding: 24px 40px;
+  }
+
+  /* desktop */
+  .navbar-menu {
+    margin-left: 160px;
+  }
+
+  /* desktop */
+  .navbar-burger {
+    display: none;
+  }
+
+  /* desktop */
+  .toggle-menu {
+    display: none;
+  }
+
+  /* desktop */
+  .main-page {
+    float: right;
+  }
+
+  /* desktop */
+  .container {
+    padding: 0 40px 88px 40px;
+    height: 100vh;
+    max-width: 75vw;
+    flex-grow: 1;
+    z-index: 1;
+  }
+
+  /* desktop */
+  .main-image, .work-image {
+    top: 0;
+    left: auto;
+    width: auto;
+    max-height: 100%;
+    right: 40px;
+    position: absolute;
+  }
+
+  /* desktop */
+  .left-menu, .about-menu {
+    display: block;
+    position: fixed;
+    top: 0;
+    height: 50vh;
+    padding-top: 40px;
+    overflow: scroll;
+  }
+
+  /* desktop */
+  .left-description {
+    position: fixed;
+    bottom: 88px;
+    height: 20vh;
+  }
+
+  /* desktop */
+  .flex-row {
+    display: flex;
+    width: 100vw;
+    padding: 0;
+  }
+
+  /* desktop */
+  .flex-column {
+    display: flex;
+    flex-direction: column;
+    max-width: 25vw;
+  }
+
+  /* desktop */
+  .menu-title {
+    font-size: 1.5rem;
+    font-weight: 400;
+    padding: 1.8rem 0;
+  }
+
+  /* desktop */
+  .work-description {
+    line-height: 1.5rem;
+  }
+
+  /* desktop */
+  .gradient-box {
+    position: sticky;
+    pointer-events: none;
+    bottom: -4px;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,0.8),rgba(255,255,255,1) );
+  }
+
+  /* desktop */
+  .fade {
+    opacity: 0.5;
+  }
+
+  /* desktop */
+  .small-image {
+    display: block;
+    width: 600px;
+    padding-bottom: 56px;
+  }
+
+  /* desktop */
+  .about-container {
+    padding: 56px 120px 200px 40px;
+    max-width: 75vw;
+  }
+
+
 }
