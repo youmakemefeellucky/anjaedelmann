@@ -10,17 +10,29 @@
   <title>Anja Edelmann</title>
 </head>
 <body>
-  <div class="container main-page" data-slideshow>
+  <div id="slideshow" class="container main-page" data-slideshow>
     <img class="main-image" src="./img/(resized)2 Gelb und Blau als Landschaft 130 x 110_2020.jpg" alt="Gelb und Blau als Landschaft">
-    <img class="main-image" src="./img/(resized)3 Transformation - Figur im Berg 130 x 110_2020.jpg" alt="Transformation - Figur im Berg">
-    <img class="main-image" src="./img/(resized)4 Gespräch der Rehe 110 x 100_2020.jpg" alt="Gespräch der Rehe">
+    <img class="main-image" src="./img/(resized)3 Transformation - Figur im Berg 130 x 110_2020.jpg" alt="Transformation - Figur im Berg" style="display: none;">
+    <img class="main-image" src="./img/(resized)4 Gespräch der Rehe 110 x 100_2020.jpg" alt="Gespräch der Rehe" style="display: none;">
   </div>
 
   <nav class="navbar">
       <a class="navbar-home" href="index.html"><h1>Anja Edelmann</h1></a>
-      <a class="navbar-menu" href="artwork.html"><h2>Artwork</h2></a>
-      <a class="navbar-menu" href="about.html"><h2>About</h2></a>
+      <div class="flex">
+        <a class="navbar-menu" href="artwork.html"><h2>Artwork</h2></a>
+        <a class="navbar-menu" href="about.html"><h2>About</h2></a>
+      </div>
+      <div class="navbar-burger">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
   </nav>
+
+  <div class="toggle-menu">
+    <a class="toogle-menu-item" href="artwork.html"><h2>Artwork</h2></a>
+    <a class="toogle-menu-item" href="about.html"><h2>About</h2></a>
+  </div>
 
   <script src="./js/script.js"></script>
 </body>

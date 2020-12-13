@@ -12,7 +12,7 @@
 <body>
   <div class="flex-row">
     <div class="flex-column container">
-      <div class="left-menu">
+      <div class="about-menu">
         <h3 class="menu-item"><a href="about.html">Über mich</a></h3>
         <h3 class="menu-item active"><a href="about1.html">Kontakt</a></h3>
         <div class="menu-item"><a href="https://instagram.com" target="_blank"><img class="icon" src="./img/insta.svg"></a></div>
@@ -40,9 +40,21 @@
 
   <nav class="navbar">
       <a class="navbar-home" href="index.html"><h1>Anja Edelmann</h1></a>
-      <a class="navbar-menu" href="artwork.html"><h2>Artwork</h2></a>
-      <a class="navbar-menu" href="about.html"><h2>About</h2></a>
+      <div class="flex">
+        <a class="navbar-menu" href="artwork.html"><h2>Artwork</h2></a>
+        <a class="navbar-menu" href="about.html"><h2>About</h2></a>
+      </div>
+      <div class="navbar-burger">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
   </nav>
+
+  <div class="toggle-menu">
+    <a class="toogle-menu-item" href="artwork.html"><h2>Artwork</h2></a>
+    <a class="toogle-menu-item" href="about.html"><h2>About</h2></a>
+  </div>
 
   <script src="./js/script.js"></script>
 </body>
